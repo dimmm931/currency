@@ -1,0 +1,33 @@
+<script>
+ 
+ var c = 1353.008;
+ var n = 2;
+
+ 
+ 
+
+ if (parseInt(c) !== c) {  //check if it is Float, n ot int (if has ".")
+     alert("YES match");
+	 c = c.toFixed(20);  // fixes trouble with long  floats,  helps to avoid scintific notation "e"
+	
+     var stringX = c.toString();     alert(stringX);
+	 var arr = c.split('.');
+     var final = arr[1];  alert('array -> ' + final);
+     var i = 1;
+ 
+     while (final[i] == 0) {  //arr[1]= 00007;
+         ++i;
+     }
+     //alert(arr[1][1]);
+ 
+     alert(i);
+
+     n = i;
+	 //alert(parseFloat(c));
+     alert(parseFloat(c).toFixed(n + 1));  //must include parseFloat(c) to convert string to Float ot  it will contain "e" //must include (n+1) to get correct toFix
+	 
+ } else { // if it is a int , not Float do nothing
+     alert("No match " + c);
+ }
+ 
+ </script>
